@@ -1788,12 +1788,19 @@
     const servicio = document.getElementById('servicioInteres').value;
     const mensaje = document.getElementById('mensaje').value.trim();
     if (!nombre || !telefono) { alert('Por favor, completa tu nombre y teléfono.'); return; }
-    let txt = `✨ *Nueva consulta — Destellos de Mariposa* ✨%0A%0A`;
-    txt += `*Nombre:* ${nombre}%0A*Teléfono:* ${telefono}%0A`;
-    if (servicio) txt += `*Servicio:* ${servicio}%0A`;
-    if (mensaje) txt += `*Mensaje:* ${mensaje}%0A`;
-    txt += `%0A🌸 ¡Hola! Me gustaría pedir información o reservar cita. 🌸`;
-    window.open(`https://wa.me/34653703258?text=${txt}`, '_blank');
+    let txt = `✨ *Nueva consulta — Destellos de Mariposa* ✨\n\n`;
+    txt += `*Nombre:* ${nombre}\n*Teléfono:* ${telefono}\n`;
+    if (servicio) txt += `*Servicio:* ${servicio}\n`;
+    if (mensaje) txt += `*Mensaje:* ${mensaje}\n`;
+    txt += `\n🌸 ¡Hola! Me gustaría pedir información o reservar cita. 🌸`;
+    const url = `https://wa.me/34653703258?text=${encodeURIComponent(txt)}`;
+    const a = document.createElement('a');
+    a.href = url;
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   });
 </script>
 </body>
