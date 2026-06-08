@@ -931,6 +931,7 @@
       border-radius: 50%;
       background: rgba(37,211,102,0.3);
       animation: waPulse 2s ease-out infinite;
+      pointer-events: none;
     }
     @keyframes waPulse {
       0% { transform: scale(1); opacity: 0.8; }
@@ -1284,7 +1285,7 @@
       </div>
       <div class="service-card">
         <div class="card-icon"><i class="fas fa-star"></i></div>
-        <div class="card-name">Volumen</div>
+        <div class="card-name">Volumen +</div>
         <div class="card-desc">Extensiones de volumen para una mirada de máximo impacto y relleno.</div>
         <div class="card-footer">
           <div class="card-price">55€<small>sesión completa</small></div>
@@ -1624,16 +1625,20 @@
             <label>Servicio de interés</label>
             <select id="servicioInteres">
               <option value="">Selecciona un servicio (opcional)</option>
-              <option>Clásicas/2D — 40€</option>
-              <option>3D/4D Volumen+ — 55€</option>
-              <option>Lifting pestañas — 30€</option>
-              <option>Micropigmentación Cejas — 150€</option>
-              <option>Micropigmentación Ojos — 120€</option>
-              <option>Micropigmentación Labios — 150-200€</option>
-              <option>Retoque Labios / Cejas / Ojos</option>
+              <option>Clásicas / 2D — 40€</option>
+              <option>3D / 4D — 50€</option>
+              <option>Volumen + — 55€</option>
+              <option>Lifting de pestañas — 30€</option>
+              <option>Retirada de otro centro — 10€</option>
+              <option>Cejas micropigmentadas — 150€</option>
+              <option>Ojos · Intralash — 120€</option>
+              <option>Labios — 150–200€</option>
+              <option>Retoque Labios — 75–95€</option>
+              <option>Retoque Cejas — 75€</option>
+              <option>Retoque Ojos — 75€</option>
               <option>Laminado de cejas — 20€</option>
-              <option>Depilación ceja/labio — 5€/zona</option>
-              <option>Tinte cejas/pestañas — 5€/zona</option>
+              <option>Depilación ceja / labio — 5€/zona</option>
+              <option>Tinte cejas / pestañas — 5€/zona</option>
               <option>Otro / Consulta general</option>
             </select>
           </div>
@@ -1794,13 +1799,7 @@
     if (mensaje) txt += `*Mensaje:* ${mensaje}\n`;
     txt += `\n🌸 ¡Hola! Me gustaría pedir información o reservar cita. 🌸`;
     const url = `https://wa.me/34653703258?text=${encodeURIComponent(txt)}`;
-    const a = document.createElement('a');
-    a.href = url;
-    a.target = '_blank';
-    a.rel = 'noopener noreferrer';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    window.open(url, '_blank', 'noopener,noreferrer');
   });
 </script>
 </body>
