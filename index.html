@@ -1208,6 +1208,54 @@
       0%   { transform: translateX(0); }
       100% { transform: translateX(var(--gallery-end, -33%)); }
     }
+
+    /* ─── ANTICOPY BADGE ─── */
+    .onix-badge {
+      position: fixed;
+      bottom: 2rem;
+      left: 2rem;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(12,7,9,0.55);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: 40px;
+      padding: 0.75rem 1.3rem 0.75rem 1rem;
+      text-decoration: none;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .onix-badge:hover {
+      border-color: rgba(201,169,110,0.6);
+      background: rgba(12,7,9,0.8);
+    }
+    .onix-badge-icon {
+      width: 26px; height: 26px;
+      opacity: 0.75;
+      flex-shrink: 0;
+    }
+    .onix-badge-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .onix-badge-text span:first-child {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(201,169,110,0.6);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+    }
+    .onix-badge-text span:last-child {
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      color: rgba(201,169,110,0.9);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+    }
   </style>
 </head>
 <body>
@@ -1735,6 +1783,17 @@
   </div>
   <p class="footer-copy">© 2026 Destellos de Mariposa — Despliega tu encanto · Estética con alma de mariposa. Sitio web creado por <a href="https://tecnologiasonix.com" target="_blank" rel="noopener noreferrer" style="text-decoration:none; color:inherit;">Tecnologias Onix</a></p>
 </footer>
+
+<!-- ANTICOPY BADGE -->
+<a class="onix-badge" href="https://tecnologiasonix.com" target="_blank" rel="noopener noreferrer" aria-label="Sitio web creado por Tecnologias Onix">
+  <svg class="onix-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M8 9l-4 4 4 4M16 9l4 4-4 4M14 5l-4 14" stroke="rgba(201,169,110,0.85)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <div class="onix-badge-text">
+    <span>Sitio en desarrollo</span>
+    <span>Tecnologias Onix</span>
+  </div>
+</a>
 
 <!-- WHATSAPP FLOAT -->
 <div class="wa-float">
